@@ -1,5 +1,4 @@
 ---
-name: pre-commit-setup
 description: Configure pre-commit hooks for a project. Use when setting up code quality checks, linters, formatters, or automated validations that run before each commit.
 argument-hint: [hook-id] (e.g., ruff, black, prettier)
 allowed-tools: Read, Bash, Write, Glob, Grep

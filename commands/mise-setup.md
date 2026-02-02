@@ -1,5 +1,4 @@
 ---
-name: mise-setup
 description: Configure mise (formerly rtx) for managing tool versions in a project. Use when setting up a new project, adding runtime versions, or configuring development tools like Node.js, Python, Ruby, Go, etc.
 argument-hint: [tool@version] (e.g., python@3.12, node@20)
 allowed-tools: Read, Bash, Write, Glob

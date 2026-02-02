@@ -1,5 +1,4 @@
 ---
-name: init
 description: Initialize a complete development project with mise, pre-commit, commitizen, and uv (for Python projects). Use when starting a new project or adding standard tooling to an existing one.
 argument-hint: [python] (optional, to force Python setup)
 allowed-tools: Read, Bash, Write, Glob, Grep

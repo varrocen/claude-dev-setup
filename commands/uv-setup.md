@@ -1,5 +1,4 @@
 ---
-name: uv-setup
 description: Configure uv for Python project management. Use when creating a new Python project, migrating from pip/poetry/pipenv, managing dependencies, or setting up virtual environments.
 argument-hint: [command] (e.g., init, add package-name, sync)
 allowed-tools: Read, Bash, Write, Glob, Grep
