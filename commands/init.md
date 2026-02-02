@@ -1,6 +1,5 @@
 ---
 description: Initialize a complete development project with mise, pre-commit, commitizen, and uv (for Python projects). Use when starting a new project or adding standard tooling to an existing one.
-argument-hint: [python] (optional, to force Python setup)
 allowed-tools: Read, Bash, Write, Glob, Grep
 ---
 
@@ -20,7 +19,6 @@ Analyze the project to determine its type:
 - `package.json` → Node.js project
 - `go.mod` → Go project
 - `Cargo.toml` → Rust project
-- If `$ARGUMENTS` contains "python" → Force Python project
 
 ### 2. Configure mise
 
@@ -54,7 +52,7 @@ Analyze the project to determine its type:
 
 ### 5. Configure uv (Python projects only)
 
-- If Python project detected or forced:
+- If Python project detected:
   - Check if uv is installed via mise
   - If `pyproject.toml` doesn't exist, run `uv init`
   - Add dev dependencies: `uv add --dev pytest ruff mypy pre-commit`

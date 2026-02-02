@@ -1,6 +1,5 @@
 ---
 description: Configure mise (formerly rtx) for managing tool versions in a project. Use when setting up a new project, adding runtime versions, or configuring development tools like Node.js, Python, Ruby, Go, etc.
-argument-hint: [tool@version] (e.g., python@3.12, node@20)
 allowed-tools: Read, Bash, Write, Glob
 ---
 
@@ -18,20 +17,15 @@ Configure [mise](https://mise.jdx.dev/) for managing tool versions in this proje
    - Look for `.mise.toml` or `.tool-versions` in the project root
    - If exists, read and understand current configuration
 
-3. **If arguments provided ($ARGUMENTS)**
-   - Add the specified tool(s) to `.mise.toml`
-   - Use `mise use $ARGUMENTS` to install and pin the version
-
-4. **If no arguments provided**
-   - Analyze the project to detect required tools:
+3. **Analyze the project to detect required tools**
      - `package.json` → Node.js
      - `pyproject.toml`, `setup.py`, `requirements.txt` → Python
      - `Gemfile` → Ruby
      - `go.mod` → Go
-     - `Cargo.toml` → Rust
+   - `Cargo.toml` → Rust
    - Suggest appropriate versions based on project constraints
 
-5. **Create or update `.mise.toml`**
+4. **Create or update `.mise.toml`**
    - Prefer `.mise.toml` over `.tool-versions` for richer configuration
    - Include recommended settings:
 
@@ -43,7 +37,7 @@ Configure [mise](https://mise.jdx.dev/) for managing tool versions in this proje
      # tool = "version"
      ```
 
-6. **Activate mise**
+5. **Activate mise**
    - Run `mise trust` to trust the configuration
    - Run `mise install` to install all tools
 

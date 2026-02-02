@@ -1,6 +1,5 @@
 ---
 description: Configure pre-commit hooks for a project. Use when setting up code quality checks, linters, formatters, or automated validations that run before each commit.
-argument-hint: [hook-id] (e.g., ruff, black, prettier)
 allowed-tools: Read, Bash, Write, Glob, Grep
 ---
 
@@ -28,20 +27,16 @@ Configure [pre-commit](https://pre-commit.com/) hooks for this project.
      - Shell scripts → shellcheck
    - General → trailing-whitespace, end-of-file-fixer, check-yaml, check-json, check-toml
 
-4. **If arguments provided ($ARGUMENTS)**
-   - Add the specified hook(s) to the configuration
-   - Search for the hook repository at <https://pre-commit.com/hooks.html>
-
-5. **Create or update `.pre-commit-config.yaml`**
+4. **Create or update `.pre-commit-config.yaml`**
    - Group related hooks together
    - Add comments explaining each hook's purpose
    - Run `pre-commit autoupdate` to ensure all hooks use the latest stable versions
 
-6. **Install the hooks**
+5. **Install the hooks**
    - Run `pre-commit install` to set up the git hooks
    - Optionally run `pre-commit install --hook-type commit-msg` for commit message hooks
 
-7. **Run initial check**
+6. **Run initial check**
    - Run `pre-commit run --all-files` to validate on existing code
    - If shellcheck fails with Docker error, ask user to start Docker and retry
    - Report any issues found

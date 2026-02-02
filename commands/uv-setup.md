@@ -1,6 +1,5 @@
 ---
 description: Configure uv for Python project management. Use when creating a new Python project, migrating from pip/poetry/pipenv, managing dependencies, or setting up virtual environments.
-argument-hint: [command] (e.g., init, add package-name, sync)
 allowed-tools: Read, Bash, Write, Glob, Grep
 ---
 
@@ -15,13 +14,6 @@ Configure [uv](https://github.com/astral-sh/uv) for Python project management.
    - If not installed: `mise use uv`
 
 2. **Determine the action needed**
-
-### New Project ($ARGUMENTS contains "init")
-
-- Run `uv init` to create a new project
-- This creates `pyproject.toml`, `.python-version`, and `hello.py`
-
-### Existing Project
 
 - Check for existing configuration:
   - `pyproject.toml` with `[project]` section
@@ -60,11 +52,6 @@ uv add -r requirements.txt
 2. **Set up virtual environment**
    - uv automatically creates `.venv` when needed
    - Run `uv sync` to install all dependencies
-
-3. **If arguments specify packages ($ARGUMENTS)**
-   - `uv add <package>` for runtime dependencies
-   - `uv add --dev <package>` for development dependencies
-   - `uv remove <package>` to remove dependencies
 
 ## Common Commands
 

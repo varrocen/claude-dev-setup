@@ -24,19 +24,11 @@ Claude Code plugin to initialize and configure development projects with standar
 
 ## Usage
 
-### Initialize a new project
-
 ```bash
-/dev-setup:init           # Auto-detect project type
-/dev-setup:init python    # Force Python setup
-```
-
-### Configure a specific tool
-
-```bash
-/dev-setup:mise-setup python@3.12 node@20
-/dev-setup:uv-setup add httpx pydantic
-/dev-setup:pre-commit-setup ruff
+/dev-setup:init              # Full project initialization
+/dev-setup:mise-setup        # Configure mise only
+/dev-setup:pre-commit-setup  # Configure pre-commit only
+/dev-setup:uv-setup          # Configure uv only (Python)
 ```
 
 ## Configured Tools

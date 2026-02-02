@@ -1,6 +1,5 @@
 ---
 description: Configure commitizen for standardized commit messages following Conventional Commits. Use when setting up a project for consistent commit history, changelog generation, or semantic versioning.
-argument-hint: [bump-type] (e.g., major, minor, patch)
 allowed-tools: Read, Bash, Write, Glob, Grep
 ---
 
