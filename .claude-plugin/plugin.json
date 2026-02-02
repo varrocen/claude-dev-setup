@@ -6,5 +6,24 @@
     "name": "varrocen"
   },
   "repository": "https://github.com/varrocen/claude-dev-setup",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/pre-commit-autoupdate.sh",
+            "timeout": 60
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/shellcheck.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
 }

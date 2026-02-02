@@ -52,7 +52,3 @@ Claude Code plugin to initialize and configure development projects with standar
 - pre-commit installed via mise
 - commitizen installed via uv
 - uv installed via mise
-
-## License
-
-GPL-3.0
