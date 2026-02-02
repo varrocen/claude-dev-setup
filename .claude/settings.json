@@ -1,0 +1,13 @@
+{
+  "enabledPlugins": {
+    "dev-setup@varrocen-marketplace": true
+  },
+  "extraKnownMarketplaces": {
+    "varrocen-marketplace": {
+      "source": {
+        "source": "git",
+        "url": "git@github.com:varrocen/claude-dev-setup.git"
+      }
+    }
+  }
+}
