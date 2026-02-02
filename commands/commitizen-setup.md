@@ -103,5 +103,5 @@ major_version_zero = true
 
 ## Reference
 
-- Documentation: https://commitizen-tools.github.io/commitizen/
-- Conventional Commits: https://www.conventionalcommits.org/
+- Documentation: <https://commitizen-tools.github.io/commitizen/>
+- Conventional Commits: <https://www.conventionalcommits.org/>

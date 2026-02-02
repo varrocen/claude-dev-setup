@@ -19,15 +19,18 @@ Configure [pre-commit](https://pre-commit.com/) hooks for this project.
    - If exists, read and understand current hooks
 
 3. **Analyze the project to determine appropriate hooks**
-   - Python project → ruff, ruff-format, mypy, bandit
-   - JavaScript/TypeScript → prettier, eslint
-   - Go → go-fmt, go-vet, golangci-lint
-   - Rust → rustfmt, clippy
-   - General → trailing-whitespace, end-of-file-fixer, check-yaml, check-json
+   - Detect languages present in the project (check file extensions, package files)
+   - **Always add linters/formatters for each detected language:**
+     - Python → ruff, ruff-format, mypy, bandit
+     - JavaScript/TypeScript → prettier, eslint
+     - Go → go-fmt, go-vet, golangci-lint
+     - Rust → rustfmt, clippy
+     - Shell scripts → shellcheck
+   - General → trailing-whitespace, end-of-file-fixer, check-yaml, check-json, check-toml
 
 4. **If arguments provided ($ARGUMENTS)**
    - Add the specified hook(s) to the configuration
-   - Search for the hook repository at https://pre-commit.com/hooks.html
+   - Search for the hook repository at <https://pre-commit.com/hooks.html>
 
 5. **Create or update `.pre-commit-config.yaml`**
    - Group related hooks together
@@ -40,6 +43,7 @@ Configure [pre-commit](https://pre-commit.com/) hooks for this project.
 
 7. **Run initial check**
    - Run `pre-commit run --all-files` to validate on existing code
+   - If shellcheck fails with Docker error, ask user to start Docker and retry
    - Report any issues found
 
 ## Example Configuration
@@ -48,11 +52,13 @@ Configure [pre-commit](https://pre-commit.com/) hooks for this project.
 repos:
   # General hooks
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v6.0.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
       - id: check-yaml
+      - id: check-json
+      - id: check-toml
       - id: check-added-large-files
       - id: check-merge-conflict
 
@@ -73,6 +79,6 @@ repos:
 
 ## Reference
 
-- Documentation: https://pre-commit.com/
-- Available hooks: https://pre-commit.com/hooks.html
+- Documentation: <https://pre-commit.com/>
+- Available hooks: <https://pre-commit.com/hooks.html>
 - Update hooks: `pre-commit autoupdate`

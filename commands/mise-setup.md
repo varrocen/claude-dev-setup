@@ -34,6 +34,7 @@ Configure [mise](https://mise.jdx.dev/) for managing tool versions in this proje
 5. **Create or update `.mise.toml`**
    - Prefer `.mise.toml` over `.tool-versions` for richer configuration
    - Include recommended settings:
+
      ```toml
      [settings]
      experimental = true
@@ -59,6 +60,6 @@ node = "20"
 
 ## Reference
 
-- Documentation: https://mise.jdx.dev/
+- Documentation: <https://mise.jdx.dev/>
 - Available plugins: `mise plugins ls-remote`
 - List installed tools: `mise ls`

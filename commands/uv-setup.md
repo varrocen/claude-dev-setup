@@ -17,10 +17,12 @@ Configure [uv](https://github.com/astral-sh/uv) for Python project management.
 2. **Determine the action needed**
 
 ### New Project ($ARGUMENTS contains "init")
+
 - Run `uv init` to create a new project
 - This creates `pyproject.toml`, `.python-version`, and `hello.py`
 
 ### Existing Project
+
 - Check for existing configuration:
   - `pyproject.toml` with `[project]` section
   - `requirements.txt`
@@ -28,35 +30,38 @@ Configure [uv](https://github.com/astral-sh/uv) for Python project management.
   - `Pipfile`
   - `poetry.lock`
 
-3. **Migration from other tools**
+1. **Migration from other tools**
 
 **From requirements.txt:**
+
 ```bash
 uv add $(cat requirements.txt)
 ```
 
 **From Poetry:**
+
 ```bash
 # uv can read poetry's pyproject.toml directly
 uv sync
 ```
 
 **From Pipenv:**
+
 ```bash
 # Convert Pipfile to requirements and then to uv
 uv pip compile Pipfile -o requirements.txt
 uv add -r requirements.txt
 ```
 
-4. **Configure `pyproject.toml`**
+1. **Configure `pyproject.toml`**
    - Ensure proper project metadata
    - Add dev dependencies group if needed
 
-5. **Set up virtual environment**
+2. **Set up virtual environment**
    - uv automatically creates `.venv` when needed
    - Run `uv sync` to install all dependencies
 
-6. **If arguments specify packages ($ARGUMENTS)**
+3. **If arguments specify packages ($ARGUMENTS)**
    - `uv add <package>` for runtime dependencies
    - `uv add --dev <package>` for development dependencies
    - `uv remove <package>` to remove dependencies
@@ -117,6 +122,7 @@ strict = true
 ## Integration with mise
 
 Add Python via mise for consistent versions:
+
 ```toml
 # .mise.toml
 [tools]
@@ -126,6 +132,6 @@ uv = "latest"
 
 ## Reference
 
-- Documentation: https://docs.astral.sh/uv/
-- GitHub: https://github.com/astral-sh/uv
-- Migration guide: https://docs.astral.sh/uv/guides/migration/
+- Documentation: <https://docs.astral.sh/uv/>
+- GitHub: <https://github.com/astral-sh/uv>
+- Migration guide: <https://docs.astral.sh/uv/guides/migration/>

@@ -15,6 +15,7 @@ Execute each step sequentially:
 ### 1. Detect project type
 
 Analyze the project to determine its type:
+
 - `pyproject.toml`, `setup.py`, `requirements.txt` → Python project
 - `package.json` → Node.js project
 - `go.mod` → Go project
@@ -30,12 +31,14 @@ Analyze the project to determine its type:
   - For Node.js projects: add `node`
   - For Go projects: add `go`
   - For Rust projects: add `rust`
+- Do NOT add `[settings]` section (e.g., `experimental = true`) unless explicitly required
 - Run `mise trust` and `mise install`
 
 ### 3. Configure pre-commit
 
 - Create `.pre-commit-config.yaml` with hooks appropriate for the project type:
   - General: trailing-whitespace, end-of-file-fixer, check-yaml, check-added-large-files
+  - Shell scripts: shellcheck
   - Python: ruff, ruff-format
   - Node.js: prettier, eslint (if configured)
   - Go: go-fmt, go-vet
@@ -45,16 +48,9 @@ Analyze the project to determine its type:
 
 ### 4. Configure commitizen
 
-- Add commitizen configuration to `pyproject.toml` (Python) or create `.cz.toml` (other)
-- Configure:
-  ```toml
-  [tool.commitizen]
-  name = "cz_conventional_commits"
-  tag_format = "v$version"
-  version_scheme = "pep440"
-  update_changelog_on_bump = true
-  major_version_zero = true
-  ```
+- Do NOT create `.cz.toml` by default (commitizen defaults are sufficient)
+- For Python projects: only add `[tool.commitizen]` to `pyproject.toml` if custom settings are needed
+- The commitizen hook in pre-commit is enough to validate commit messages
 
 ### 5. Configure uv (Python projects only)
 
@@ -77,7 +73,7 @@ After running `/dev-setup:init` on a Python project:
 ```
 .mise.toml                 # Tool versions (python, uv, pre-commit)
 .pre-commit-config.yaml    # Pre-commit hooks
-pyproject.toml             # Updated with commitizen config
+pyproject.toml             # Project configuration
 uv.lock                    # Dependency lock file
 .venv/                     # Virtual environment
 ```
