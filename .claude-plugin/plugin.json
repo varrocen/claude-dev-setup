@@ -1,6 +1,6 @@
 {
   "name": "dev-setup",
-  "description": "Development project setup tools: mise, pre-commit, commitizen, uv",
+  "description": "Development project setup tools: mise, pre-commit, commitizen",
   "version": "1.0.0",
   "author": {
     "name": "varrocen"

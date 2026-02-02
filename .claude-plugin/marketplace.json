@@ -1,5 +1,5 @@
 {
-  "name": "varrocen-dev-setup",
+  "name": "varrocen-marketplace",
   "owner": {
     "name": "varrocen"
   },
@@ -7,7 +7,7 @@
     {
       "name": "dev-setup",
       "source": "./",
-      "description": "Development project setup tools: mise, pre-commit, commitizen, uv",
+      "description": "Development project setup tools: mise, pre-commit, commitizen",
       "version": "1.0.0"
     }
   ]
