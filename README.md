@@ -5,7 +5,11 @@ Claude Code plugin to initialize and configure development projects with standar
 ## Installation
 
 ```bash
-/plugin install https://github.com/varrocen/claude-dev-setup --scope user
+# Add the marketplace (once)
+/plugin marketplace add varrocen/claude-dev-setup
+
+# Install the plugin
+/plugin install dev-setup@varrocen-dev-setup --scope user
 ```
 
 ## Available Skills

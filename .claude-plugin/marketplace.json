@@ -1,0 +1,14 @@
+{
+  "name": "varrocen-dev-setup",
+  "owner": {
+    "name": "varrocen"
+  },
+  "plugins": [
+    {
+      "name": "dev-setup",
+      "source": "./",
+      "description": "Development project setup tools: mise, pre-commit, commitizen, uv",
+      "version": "1.0.0"
+    }
+  ]
+}
